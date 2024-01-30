@@ -1,14 +1,8 @@
-# Select base image
-FROM python:3.9
+FROM python:3.9.1
 
-# Install dependencies
-RUN pip install pandas
+RUN pip install pandas sqlalchemy psycopg2 requests
 
-# Set the working directory
 WORKDIR /app
+COPY upload_data.py upload_data.py 
 
-# Copy the current directory contents into the container at /app
-COPY pypeline.py pipeline.py
-
-# Specify the command to run on container start
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT [ "python", "upload_data.py" ]
