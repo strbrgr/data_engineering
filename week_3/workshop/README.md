@@ -85,8 +85,10 @@ To do that, we:
 
 - define the connection to load to: `pipeline = dlt.pipeline(destination='duckdb', dataset_name='taxi_rides')`
 - run with merge disposition `info = pipeline.run(data,
-					table_name="rides",
-					write_disposition="merge",
-          primary_key="record_hash")`
+				table_name="rides",
+				write_disposition="merge",
+        primary_key="record_hash")`
 
 In this example `data` is our JSON file. Our JSON document got flattened and sub-documents got split into separate tables
+
+## Incremental loading
