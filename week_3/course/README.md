@@ -24,3 +24,10 @@ Partitioning and Clustering are only beneficial for table sizes above 1GB and we
 
 - Avoid `SELECT *`
 - Use streaming inserts with caution due to automatic reclustering in the background
+
+## How can we query depending on `fare_amount = 0`?
+
+```sql
+SELECT COUNT(*) FROM `week3-hw.week3_dataset.week3_table`
+WHERE fare_amount = 0
+```
